@@ -20,7 +20,7 @@ public class custAppControllerClass {
 	public String custHomePage(Model model) {
 		
 		List<saleDomainModelClass> lstCustomer = cDAO.list();		
-		model.addAttribute("CustomerList", lstCustomer);		
+		model.addAttribute("lstCustomer", lstCustomer);		
 		return "index";
 		
 	}

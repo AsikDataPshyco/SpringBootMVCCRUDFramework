@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:thy="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>Welcome to Customer Portal</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Customer Details</h1>
+		<table border="1" cellpadding="10">
+			<thead>
+				<tr>
+					<th>Employe ID</th>
+					<th>Employe Name</th>
+					<th>AGE</th>
+					<th>Address</th>
+					<th>Salary</th>
+				</tr>
+			</thead>
+			
+			
+			<tbody>
+				<tr thy:each="Employee : ${lstCustomer}">
+					<td thy:text="${Employee.ID}">Employee ID</td>					
+				</tr>
+			</tbody>
+			
+			
+		</table>
+	</div>
+</body>
+</html>

@@ -24,40 +24,40 @@ public class saleDomainModelClass {
 		return ID;
 	}
 
-	public void setID(int iD) {
-		ID = iD;
+	public void setID(int ID) {
+		this.ID = ID;
 	}
 
 	public String getNAME() {
 		return NAME;
 	}
 
-	public void setNAME(String nAME) {
-		NAME = nAME;
+	public void setNAME(String NAME) {
+		this.NAME = NAME;
 	}
 
 	public int getAGE() {
 		return AGE;
 	}
 
-	public void setAGE(int aGE) {
-		AGE = aGE;
+	public void setAGE(int AGE) {
+		this.AGE = AGE;
 	}
 
 	public String getADDRESS() {
 		return ADDRESS;
 	}
 
-	public void setADDRESS(String aDDRESS) {
-		ADDRESS = aDDRESS;
+	public void setADDRESS(String ADDRESS) {
+		this.ADDRESS = ADDRESS;
 	}
 
 	public float getSALARY() {
 		return SALARY;
 	}
 
-	public void setSALARY(float sALARY) {
-		SALARY = sALARY;
+	public void setSALARY(float SALARY) {
+		this.SALARY = SALARY;
 	}
 
 	@Override
