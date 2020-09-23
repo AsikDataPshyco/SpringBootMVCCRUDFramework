@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:thy="http://www.thymeleaf.org">
+	xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
 <title>Welcome to Customer Portal</title>
@@ -18,15 +18,16 @@
 					<th>Salary</th>
 				</tr>
 			</thead>
-			
-			
+						
 			<tbody>
-				<tr thy:each="Employee : ${lstCustomer}">
-					<td thy:text="${Employee.ID}">Employee ID</td>					
-				</tr>
-			</tbody>
-			
-			
+            <tr th:each="emp : ${lstCustomer}">
+                <td th:text="${emp.ID}">ID</td>
+                <td th:text="${emp.NAME}">NAME</td>     
+                <td th:text="${emp.AGE}">AGE</td>    
+                <td th:text="${emp.ADDRESS}">ADDRESS</td>
+                <td th:text="${emp.SALARY}">SALARY</td>               
+            </tr>
+        </tbody>
 		</table>
 	</div>
 </body>

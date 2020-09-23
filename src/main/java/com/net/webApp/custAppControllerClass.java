@@ -21,6 +21,7 @@ public class custAppControllerClass {
 		
 		List<saleDomainModelClass> lstCustomer = cDAO.list();		
 		model.addAttribute("lstCustomer", lstCustomer);		
+		System.out.println(lstCustomer);
 		return "index";
 		
 	}
