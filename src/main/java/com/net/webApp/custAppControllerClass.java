@@ -25,4 +25,15 @@ public class custAppControllerClass {
 		return "index";
 		
 	}
+	
+	@RequestMapping("/new")
+	
+	public String createNewEmployee(Model model) {
+		
+		saleDomainModelClass empData = new saleDomainModelClass();
+		model.addAttribute("empData", empData);
+		
+				
+		return "newemployee";
+	}
 }
