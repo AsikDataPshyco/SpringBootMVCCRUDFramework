@@ -34,7 +34,10 @@ class custDataAccessObjectClassTest {
 
 	@Test
 	void testInsertRow() {
-		fail("Not yet implemented");
+		
+		saleDomainModelClass insertObj = new saleDomainModelClass("Robert",25,"1055 N Warson Road",120000);
+		custDAO.insertRow(insertObj);
+		
 	}
 
 	@Test

@@ -3,6 +3,8 @@ package com.net.webApp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -36,6 +38,15 @@ public class custDataAccessObjectClass {
 	//Insert a row into a Database
 	
 	public void insertRow (saleDomainModelClass saleDomainModelClass) {
+		
+		SimpleJdbcInsert insert = new  SimpleJdbcInsert(JdbcTemplate);
+		
+		insert.withTableName("SPRING_CUST").usingColumns("ID","NAME","AGE","ADDRESS","SALARY");
+		
+		BeanPropertySqlParameterSource sqlparam = new BeanPropertySqlParameterSource(saleDomainModelClass);
+		
+		insert.execute(sqlparam);
+		
 				
 	}
 	
