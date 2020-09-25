@@ -60,5 +60,18 @@ public class custAppControllerClass {
 	    return mav;
 	   
 	}
-
+	@RequestMapping(value = "/update" , method = RequestMethod.POST)
+	public String updateRow(@ModelAttribute("empData") saleDomainModelClass empData) {
+		
+		cDAO.updateEmploye(empData);
+		
+		return "redirect:/";
+	}
+	@RequestMapping("/delete/{ID}")	
+	public String deleteEmploye(@PathVariable(name = "ID") int ID ){
+	    cDAO.deleteCust(ID);
+	    return "redirect:/";
+	   
+	}
+	
 }

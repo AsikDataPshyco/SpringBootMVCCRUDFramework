@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -61,13 +62,18 @@ public class custDataAccessObjectClass {
 	}
 	
 	
-	public void updateCust (saleDomainModelClass saleDomainModelClass)
+	public void updateEmploye (saleDomainModelClass saleDomainModelClass)
 	{
-		
+		String sql = "UPDATE SPRING_CUST SET NAME=:NAME,AGE=:AGE,ADDRESS=:ADDRESS,SALARY=:SALARY WHERE ID =:ID";
+		BeanPropertySqlParameterSource param = new BeanPropertySqlParameterSource(saleDomainModelClass);
+		NamedParameterJdbcTemplate template = new NamedParameterJdbcTemplate(JdbcTemplate);
+		template.update(sql, param);
 	}
 	
-	public void deleteCust (int id)
+	public void deleteCust (int ID)
 	{
+		String sql = "DELETE  FROM SPRING_CUST WHERE ID = ?";
+		JdbcTemplate.update(sql,ID);
 		
 	}
 }

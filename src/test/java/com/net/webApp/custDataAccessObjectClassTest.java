@@ -29,7 +29,7 @@ class custDataAccessObjectClassTest {
 	@Test
 	void testList() {
 		List<saleDomainModelClass> lstCust  = custDAO.list();
-		assertTrue(lstCust.isEmpty());
+		assertTrue(!lstCust.isEmpty());
 	}
 
 	@Test
@@ -50,12 +50,19 @@ class custDataAccessObjectClassTest {
 
 	@Test
 	void testUpdateCust() {
-		fail("Not yet implemented");
+		
+		saleDomainModelClass emp = new saleDomainModelClass();
+		emp.setID(5);
+		emp.setNAME("modfied name");
+		emp.setADDRESS("modified address");
+		custDAO.updateEmploye(emp);
+		
 	}
 
 	@Test
 	void testDeleteCust() {
-		fail("Not yet implemented");
+		int id =1;
+		custDAO.deleteCust(id);
 	}
 
 }

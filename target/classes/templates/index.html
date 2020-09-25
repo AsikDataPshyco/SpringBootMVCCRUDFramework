@@ -30,7 +30,9 @@
                 <td th:text="${emp.ADDRESS}">ADDRESS</td>
                 <td th:text="${emp.SALARY}">SALARY</td>
                 <td>
-                <a th:href="@{'/edit/'+${emp.ID}}">edit</a>
+                <a th:href="@{'/edit/'+${emp.ID}}">Edit</a>
+                &nbsp;&nbsp;&nbsp;
+                <a th:href="@{'/delete/'+${emp.ID}}">Delete</a>
                                     
                 </td>                               
             </tr>
