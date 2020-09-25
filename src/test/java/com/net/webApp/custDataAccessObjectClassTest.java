@@ -42,7 +42,10 @@ class custDataAccessObjectClassTest {
 
 	@Test
 	void testGet() {
-		fail("Not yet implemented");
+		
+		int id = 1;
+		saleDomainModelClass getemployeeId = custDAO.get(id);
+		assertNotNull(getemployeeId);
 	}
 
 	@Test

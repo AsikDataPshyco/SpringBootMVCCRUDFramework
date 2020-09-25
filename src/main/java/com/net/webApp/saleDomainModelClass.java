@@ -14,6 +14,7 @@ public class saleDomainModelClass {
 
 	public saleDomainModelClass(String NAME, int AGE, String ADDRESS, float SALARY) {
 		super();
+		
 		this.NAME = NAME;
 		this.AGE = AGE;
 		this.ADDRESS = ADDRESS;

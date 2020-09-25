@@ -41,7 +41,7 @@ public class custDataAccessObjectClass {
 		
 		SimpleJdbcInsert insert = new  SimpleJdbcInsert(JdbcTemplate);
 		
-		insert.withTableName("SPRING_CUST").usingColumns("ID","NAME","AGE","ADDRESS","SALARY");
+		insert.withTableName("SPRING_CUST").usingColumns("NAME","AGE","ADDRESS","SALARY");
 		
 		BeanPropertySqlParameterSource sqlparam = new BeanPropertySqlParameterSource(saleDomainModelClass);
 		
@@ -52,12 +52,14 @@ public class custDataAccessObjectClass {
 	
 	//Save the specific record to the database
 	
-	public saleDomainModelClass get(int ID)
-	{
-		return null;
+	public saleDomainModelClass get(int ID) {
+	    String sql = "SELECT * FROM SPRING_CUST WHERE ID = ?";
+	    Object[] args = {ID};
+	    saleDomainModelClass sale = JdbcTemplate.queryForObject(sql, args,
+	                    BeanPropertyRowMapper.newInstance(saleDomainModelClass.class));	    
+	    return sale;
 	}
 	
-	//Update the customer information 
 	
 	public void updateCust (saleDomainModelClass saleDomainModelClass)
 	{

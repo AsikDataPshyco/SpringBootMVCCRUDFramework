@@ -9,7 +9,7 @@
 	<div align="center">
 		<h1>Employee Details</h1>
 		 <a href="/new">Enter New Employee Information</a>
-    	<br/><br/>
+		<br/><br/><br/>    	
 		<table border="1" cellpadding="10">
 			<thead>
 				<tr>
@@ -28,7 +28,11 @@
                 <td th:text="${emp.NAME}">NAME</td>     
                 <td th:text="${emp.AGE}">AGE</td>    
                 <td th:text="${emp.ADDRESS}">ADDRESS</td>
-                <td th:text="${emp.SALARY}">SALARY</td>               
+                <td th:text="${emp.SALARY}">SALARY</td>
+                <td>
+                <a th:href="@{'/edit/'+${emp.ID}}">edit</a>
+                                    
+                </td>                               
             </tr>
         </tbody>
 		</table>
